@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:loginuitask/Signup_page.dart';
+import 'package:loginuitask/widgets/buildTextFormField.dart';
 void main()
 {
   runApp(MyApp());
@@ -63,50 +64,10 @@ class _MyLoginState extends State<MyLogin> {
                   ),
                 ),
                 SizedBox(height: 50,),
-                Padding(
-                  padding: const EdgeInsets.only(left: 40.0,right: 40.0),
-                  child: Center(
-                    child: Material(
-                      elevation: 5.0,
-                      borderRadius: BorderRadius.circular(60),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                            contentPadding: new EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide: BorderSide(color: Colors.black26)),
-                            prefixIcon: Icon(Icons.person,color: Colors.blueAccent,),
-
-                          hintText: 'Username'
-                        ),
-                      ),
-                    ),
-
-                  ),
-                ),
+                buildTextFormField(hintText: 'Username'),
                 SizedBox(height: 30,),
-                Padding(
-                  padding: const EdgeInsets.only(left: 40.0,right: 40.0),
-                  child: Center(
-                    child: Material(
-                      elevation: 5.0,
-                      borderRadius: BorderRadius.circular(60),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          enabled: true,
-                            contentPadding: new EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide: BorderSide(color: Colors.black26)),
-                            prefixIcon: Icon(Icons.vpn_key_sharp,color: Colors.blueAccent,),
-                            hintText: 'Password'
-                        ),
-                      ),
-                    ),
+                buildTextFormField(hintText: 'Password'),
 
-                  ),
-
-                ),
                 SizedBox(
                   height: 15,
                 ),
@@ -149,4 +110,6 @@ class _MyLoginState extends State<MyLogin> {
       ),
     );
   }
+
+
 }
